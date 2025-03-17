@@ -24,7 +24,7 @@ namespace TecInvoice_PDF
                 Logger.Error("Please provide the xml and pdf file paths.");
                 return;
             }
-            Logger.Info("Adding XML to PDF...");
+            Logger.Info($"Adding {config.xmlFilePath} to {config.pdfFilePath}");
             AddXmlToPdf(config.xmlFilePath, config.pdfFilePath);
             Logger.Info("Successfully added XML to PDF.");
         }
