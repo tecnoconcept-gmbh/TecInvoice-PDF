@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "TecInvoice-PDF": {
-      "commandName": "Project",
-      "commandLineArgs": "--XmlFilePath=\"C:\\Users\\md\\Documents\\ZUGFeRD\\factur-x.xml\"\r\n--PdfFilePath=\"C:\\Users\\md\\Documents\\Hatex Rechnung-20241104038 - XMP-Metadaten fehlen.pdf\""
-    }
-  }
-}
