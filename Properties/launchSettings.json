@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TecInvoice-PDF": {
+      "commandName": "Project",
+      "commandLineArgs": "--XmlFilePath=\"FILE PATH HERE\"\r\n--PdfFilePath=\"FILE PATH HERE\""
+    }
+  }
+}
