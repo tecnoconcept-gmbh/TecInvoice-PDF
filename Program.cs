@@ -25,10 +25,10 @@ namespace TecInvoice_PDF
                 return;
             }
             Logger.Info($"Adding {config.xmlFilePath} to {config.pdfFilePath}");
-            AddXmlToPdf(config.xmlFilePath, config.pdfFilePath);
+            AddXmlToPdf(config.xmlFilePath, config.pdfFilePath, config.Profile);
             Logger.Info("Successfully added XML to PDF.");
         }
-        private static void AddXmlToPdf(string xmlFile, string pdfFile)
+        private static void AddXmlToPdf(string xmlFile, string pdfFile, string profile)
         {
             var tempFile = Path.GetTempFileName();
 
@@ -37,7 +37,7 @@ namespace TecInvoice_PDF
             var pdfDoc = new its.Pdf.PdfDocument(reader, writer);
 
             Logger.Info("Adding XMP Metadata...");
-            byte[] xmpFile = File.ReadAllBytes("TecFerd_BASIC.xmp");
+            byte[] xmpFile = File.ReadAllBytes($"TecFerd_{profile.ToUpper()}.xmp");
             XMPMeta xmp = XMPMetaFactory.ParseFromBuffer(xmpFile);
             SerializeOptions options = new SerializeOptions();
             options.SetUseCanonicalFormat(true);
